@@ -1,0 +1,101 @@
+html {
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    min-height: 100%;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;}
+.flex{
+    display: flex;
+}
+*{
+    font-size: 2rem;
+}
+main.flex{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+main section{
+    width: 50%;
+    min-height:100vh;
+}
+main section:nth-child(1){
+    background-color: 	#F2EECB;
+    background-image: url("../img/cahier.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+main section.flex.form{
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    display: block;
+    margin-bottom: 1%;
+}
+form{
+    text-align: center;
+    width: 80%;
+}
+div.flex{
+    justify-content: center;
+    align-items:baseline;
+}
+input[name="level"]{
+    margin: 0 2% 0 10%;
+}
+section form input{
+    margin-bottom: 2%;
+}
+div.flex.date select{
+    width: 30%;
+    justify-content: space-between;
+}
+input[name="titre"]{
+    width: 90%;
+}
+input[name="description"]{
+    width: 90%;
+    height: 9rem;
+}
+input[name="enregistrer"]{
+    margin-top: 2%;
+}
+fieldset{
+    box-shadow: 1px 1px 1px black;
+}
+
+/*-----------------------------------afficher-----------------------------------------*/
+article{
+    margin-top: 25rem;
+    width: 90%;
+}
+li{
+    margin: 5% 0;
+    list-style-type: none;
+}
+li p{
+    display: inline;
+}
+li >p+p{
+    display: none;
+}
+
+li >p:hover+p {
+    display:block;
+}
+input[type="checkbox"]{
+    margin-right: 2%;
+}
+.describ{
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding:2%
+}
