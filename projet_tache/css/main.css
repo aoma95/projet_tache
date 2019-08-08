@@ -20,31 +20,51 @@ main.flex{
     align-content: center;
     align-items: center;
 }
+
 main section{
     width: 50%;
     min-height:100vh;
+    max-height:100vh;
 }
+h1.basse,h1.normal,h1.haute{
+    font-family: 'Chewy', cursive;
+}
+h1+p{
+    font-family: 'Amita', cursive;
+}
+/*-----------------------------------formulaire-----------------------------------------*/
 main section:nth-child(1){
-    background-color: 	#F2EECB;
-    background-image: url("../img/cahier.png");
+    background-image: url("../img/fond_tache-min.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 main section.flex.form{
+    background-image: url("../img/background_form_add.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
 }
-
+input[placeholder],textarea[placeholder],select,option{
+    text-shadow: #ff1f08 1px 1px, #ff1f08 -1px 1px,#ff1f08 -1px -1px,#ff1f08 1px -1px;;
+    font-size: 3rem;
+}
+legend{
+    text-shadow: #ff1f08 1px 1px, #ff1f08 -1px 1px,#ff1f08 -1px -1px,#ff1f08 1px -1px;;
+    font-size: 9rem;
+}
 label{
+    text-shadow: #ff1f08 1px 1px, #ff1f08 -1px 1px,#ff1f08 -1px -1px,#ff1f08 1px -1px;
     display: block;
     margin-bottom: 1%;
+    font-size: 2.5rem;
 }
-form{
+.add{
     text-align: center;
     width: 80%;
 }
 div.flex{
-    justify-content: center;
+    justify-content: space-around;
     align-items:baseline;
 }
 input[name="level"]{
@@ -60,42 +80,162 @@ div.flex.date select{
 input[name="titre"]{
     width: 90%;
 }
-input[name="description"]{
-    width: 90%;
-    height: 9rem;
-}
+
 input[name="enregistrer"]{
     margin-top: 2%;
+}
+
+input[name="enregistrer"]{
+    background: url(http://ecard.enter-media.org/upload/iblock/29f/29f460c1ee6c9a7bfe713bec9efa968f.jpg) repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-position: 50% 50%;
+    position: relative;
+    line-height:normal;
+    font-size:2rem;
+    background-color: #451807;
+}
+
+input[name="enregistrer"]:after{
+    content: attr(data-text);
+    position: absolute;
+    text-shadow:0 0 2px #FF0000,0 0 30px #FF0000,5px 9px 5px #333, 0 0 150px #FF0000;left: 0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    z-index: -1;
+    line-height:normal;
+    font-size:2rem;
+    background-color:#262626;
+
 }
 fieldset{
     box-shadow: 1px 1px 1px black;
 }
+input[name="titre"],textarea[name="description"],select{
+    background-image: url("../img/bg_input_txt.jpeg");
+}
 
-/*-----------------------------------afficher-----------------------------------------*/
+/*-----------------------------------afficher tache-----------------------------------------*/
+.supp{
+    width: 100%;
+    text-align: center;
+}
 article{
-    margin-top: 25rem;
-    width: 90%;
+    overflow: auto;
+}
+ul,article{
+    width: 100%;
+    text-align: left;
 }
 li{
-    margin: 5% 0;
     list-style-type: none;
+    margin:2% 0;
 }
-li p{
-    display: inline;
-}
-li >p+p{
-    display: none;
-}
-
-li >p:hover+p {
-    display:block;
-}
-input[type="checkbox"]{
+input[name="tache[]"]{
     margin-right: 2%;
 }
-.describ{
-    background-color: whitesmoke;
-    border: 1px solid black;
-    border-radius: 50px;
-    padding:2%
+h1{
+    font-weight: lighter;
+    display: inline;
+    text-shadow: #ff1f08 1px 1px, #ff1f08 -1px 1px,#ff1f08 -1px -1px,#ff1f08 1px -1px;
 }
+p{
+    overflow:auto;
+    display: none;
+    margin-right: 6%;
+    padding: 3%;
+    background-image: url("../img/parchemin.jpg");
+    background-repeat: no-repeat;
+    width: 88%;
+}
+h1 p{
+    margin: 0.5%;
+    padding: 5%;
+    width: 100%;
+}
+h1:hover +p{
+    display: block;
+}
+input[name="supprimer"]{
+    margin-top:5%;
+}
+/*______________________________INPUT RADIO______________________________________________*/
+input[type=radio]{
+    display: none;
+}
+/* Affichage par défaut du bouton radio personnalisé */
+input[type=radio] + label:before {
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-top: -3px;
+    margin-right: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 17px;
+    height: 17px;
+}
+/* Affichage du bouton radio personnalisé quand il est sélectionné */
+input[type=radio]:checked + label:before {
+    background: #ff1f08;
+    border-color: #ff1f08;
+    box-shadow: inset 0px 0px 0px 2px #632604;
+}
+.element{
+    margin-bottom:14px;
+}
+label{
+    cursor:pointer;
+}
+/*______________________________CHEKBOX______________________________________________*/
+input[type=checkbox] {
+    height: 25px;
+    width: 25px;
+}
+/*_______________________________Button suprimer_____________________________________*/
+
+
+.buttons {
+    margin: 10%;
+    text-align: center;
+}
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+.btn-hover.color-8 {
+    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+
+
+
